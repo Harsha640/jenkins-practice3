@@ -1,3 +1,46 @@
+# Spring Boot based Java web application (Local host)
+
+This is a simple Sprint Boot based Java application that can be built using Maven. Sprint Boot dependencies are handled using the pom.xml 
+at the root directory of the repository.
+
+## Execute the application locally and access it using your browser
+
+Checkout the repo and move to the directory
+
+```
+git clone https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero
+cd /Users/ram/Jenkins-Zero-To-Hero/java-maven-sonar-argocd-helm-k8s/spring-boot-app
+```
+install in the spring-boot-app path
+Execute the Maven targets to generate the artifacts
+
+```
+mvn clean package
+```
+
+### The Docker way
+
+Build the Docker Image
+
+Remove the old base image and add the below image in visual studio code.
+
+```
+FROM eclipse-temurin:17 
+```
+
+
+Ready to build the image
+```
+docker build -t ultimate-cicd-pipeline:v1 .
+```
+
+```
+docker run -d -p 8010:8080 -t ultimate-cicd-pipeline:v1
+```
+
+Hurray !! Access the application on `http://localhost:8010`
+
+
 ## Applications and prerequisites 
 
 - java 
@@ -191,45 +234,5 @@ pass: copy from the terminal.
 
 ==============================================================================
 
-# Spring Boot based Java web application (Local host)
 
-This is a simple Sprint Boot based Java application that can be built using Maven. Sprint Boot dependencies are handled using the pom.xml 
-at the root directory of the repository.
-
-## Execute the application locally and access it using your browser
-
-Checkout the repo and move to the directory
-
-```
-git clone https://github.com/Harsha640/Jenkins-CICD-practice
-///cd /Users/ram/Jenkins-Zero-To-Hero/java-maven-sonar-argocd-helm-k8s/spring-boot-app///
-```
-install in the spring-boot-app path
-Execute the Maven targets to generate the artifacts
-
-```
-mvn clean package
-```
-
-### The Docker way
-
-Build the Docker Image
-
-Remove the old base image and add the below image in visual studio code.
-
-```
-FROM eclipse-temurin:17 
-```
-
-
-Ready to build the image
-```
-docker build -t ultimate-cicd-pipeline:v1 .
-```
-
-```
-docker run -d -p 8010:8080 -t ultimate-cicd-pipeline:v1
-```
-
-Hurray !! Access the application on `http://<ip-address>:8010`
 
