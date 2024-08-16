@@ -15,7 +15,11 @@
 - Go to AWS Console
 - Instances(running)
 - Launch instances
-- add inbound traffic rule
+```
+ssh -i /Users/ram/Downloads/linux-key-2.pem ubuntu@<ec2-instance-public-ip-address>
+
+```
+  Add inbound traffic rule
 
 **Note: ** By default, Jenkins will not be accessible to the external world due to the inbound traffic restriction by AWS. Open port 8080 in the inbound traffic rules as show below.
 
@@ -63,8 +67,7 @@ sudo apt-get install jenkins
 
 ### Login to Jenkins using the below URL:
 
-http://<ec2-instance-public-ip-address>:8080    [You can get the ec2-instance-public-ip-address from your AWS EC2 console page]
-
+http://<ec2-instance-public-ip-address>:8080   
 Note: If you are not interested in allowing `All Traffic` to your EC2 instance
       1. Delete the inbound traffic rule for your instance
       2. Edit the inbound traffic rule to only allow custom TCP port `8080`
@@ -78,9 +81,6 @@ After you login to Jenkins,
 
 
 Wait for the Jenkins to Install suggested plugins
-
-
-Create First Admin User or Skip the step [If you want to use this Jenkins instance for future use-cases as well, better to create admin user]
 
 
 Jenkins Installation is Successful. You can now starting using the Jenkins 
@@ -145,11 +145,6 @@ usermod -aG docker ubuntu
 systemctl restart docker
 ```
 
-## Change the old sonarqube url with latest public IP in JenkinsFile
-```
-"http://<ec2-instance-public-ip>:9000"
-```
-
 Once you are done with the above steps, it is better to restart Jenkins.
 
 ```
@@ -157,6 +152,11 @@ http://<ec2-instance-public-ip>:8080/restart
 ```
 
 The docker agent configuration is now successful.
+
+## Change the old sonarqube url with latest public IP in JenkinsFile
+```
+"http://<ec2-instance-public-ip>:9000"
+```
 
 ## Argo CD
 
