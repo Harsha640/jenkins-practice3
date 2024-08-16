@@ -207,8 +207,10 @@ To start the argoCD
 
 ```
 minikube start
+```
 
-Creating a name space 
+Need to create a name space 
+```
 
 kubectl create namespace argocd4
 
