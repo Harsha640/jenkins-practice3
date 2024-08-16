@@ -206,6 +206,7 @@ The docker agent configuration is now successful.
 To start the argoCD
 
 ```
+minikube status
 minikube start
 ```
 
