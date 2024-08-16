@@ -153,7 +153,7 @@ http://<ec2-instance-public-ip>:8080/restart
 
 The docker agent configuration is now successful.
 
-## Change the old sonarqube url with latest public IP in JenkinsFile
+## Change the old sonarqube url with latest public IP in JenkinsFile and need to change docker file.
 ```
 "http://<ec2-instance-public-ip>:9000"
 ```
@@ -218,7 +218,7 @@ Build the Docker Image
 Remove the old base image and add the below image in visual studio code.
 
 ```
-FROM eclipse-temurin:21 
+FROM eclipse-temurin:17 
 ```
 
 
